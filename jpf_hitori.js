@@ -10,7 +10,7 @@
 
    Global Variables
    ================
-   
+
    allCells
       References the TD cells within the Hitori table grid.   
       
@@ -58,6 +58,16 @@
 
          
 /* ================================================================= */
+
+
+var allCells = 
+
+html.onLoad = startUp()
+
+startUp(){
+   document.getElementById("puzzleTitle") = "Puzzle 1";
+   hitori1Numbers: 
+}
 
 function checkSolution() {
    /* Set the initial solved state of the puzzle to true */
