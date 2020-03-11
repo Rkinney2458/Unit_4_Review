@@ -47,7 +47,9 @@
 	
 */
 var allCells;
+
 window.onload = startUp;
+
 function startUp() {
     document.getElementById("puzzleTitle").innerHTML = "Puzzle 1";
     document.getElementById("puzzle").innerHTML = drawHitori(hitori1Numbers, hitori1Blocks, hitori1Rating);
@@ -60,8 +62,9 @@ function startUp() {
     document.getElementById("solve").addEventListener("click", showSolution);
 }
 function switchPuzzle(e) {
-    if (confirm("Do you want to switch puzzles your work will be lost?")) {
-        var puzzleID = e.target.id;
+    if (confirm("Are you sure, your progress will be lost.")) {
+        
+      var puzzleID = e.target.id;
         document.getElementById("puzzleTitle").innerHTML = e.target.value;
         switch (puzzleID) {
             case "puzzle1":
@@ -77,7 +80,9 @@ function switchPuzzle(e) {
         setupPuzzle();
    }
 }
+
 function setupPuzzle() {
+
     allCells = document.querySelectorAll("table#hitoriGrid td");
     for (var i = 0; i < allCells.length; i++ ) {
         allCells[i].style.backgroundColor = "white";
@@ -117,7 +122,9 @@ function setupPuzzle() {
         document.addEventListener("mouseup", checkSolution);
     }
 }
+
 function findErrors() {
+
     for (var i = 0; i < allCells.length; i++) {
         if ((allCells[i].className === "blocks" &&
         allCells[i].style.backgroundColor === "rgb(101,101,100)")
@@ -161,7 +168,7 @@ function checkSolution() {
    }
 
    /* If solved is still true after the loop, display an alert box */
-   if (solved) alert("Congratulations! You solved the puzzle!");
+   if (solved) alert("Good work on solving the puzzle, maybe try a harder difficulty?");
 }
 
 function showSolution () {
